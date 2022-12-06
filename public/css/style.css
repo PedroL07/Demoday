@@ -1,7 +1,4 @@
-.hi{
-    width: 65%;
-    margin-bottom: 1%;
-}
+
 .logger{
     color: rgb(19, 79, 130);
 }
@@ -35,4 +32,7 @@ p{
 
  #firstt, #first{
     background-color: #4ac6e2;
+ }
+ .klk{
+    font-size: 3rem;
  }

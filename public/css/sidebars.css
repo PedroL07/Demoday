@@ -1,6 +1,7 @@
 body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
+  margin: 0!important;
 }
 
 html {
@@ -9,12 +10,12 @@ html {
 
 main {
   display: flex;
-  flex-wrap: nowrap;
+  
   height: 100vh;
   height: -webkit-fill-available;
   max-height: 100vh;
   overflow-x: auto;
-  overflow-y: hidden;
+
 }
 
 .b-example-divider {
@@ -101,4 +102,8 @@ main {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
   }
+}
+.nav-pills{
+  background-color: rgb(255, 255, 255);
+  color: white;
 }
