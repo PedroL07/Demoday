@@ -2,6 +2,7 @@
 const Post = require("../models/Post");
 const Comment = require("../models/Comment");
 const cloudinary = require("../middleware/cloudinary");
+const Med = require("../models/med");
 
 
 module.exports = {
@@ -17,8 +18,18 @@ module.exports = {
   },
   getFeed: async (req, res) => {
     try {
-      const posts = await Post.find().sort({ createdAt: "asc" }).lean();
-      res.render("feed.ejs", { posts: posts });
+      const posts = await Post.find().sort({ title: "asc" }).lean();
+      res.render("feed.ejs", { posts: posts,
+        user: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getBadPage: async (req, res) => {
+    try {
+      const posts = await Post.find().sort({ title: "asc" }).lean();
+      res.render("bad.ejs", { posts: posts,
+        user: req.user });
     } catch (err) {
       console.log(err);
     }
@@ -26,6 +37,7 @@ module.exports = {
   getPost: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id);
+      const meds = await Med.find({ post: req.params.id });
       const comments = await Comment.find({ post: req.params.id })
         .sort({ createdAt: "desc" })
         .lean();
@@ -33,6 +45,7 @@ module.exports = {
         post: post,
         user: req.user,
         comments: comments,
+        meds: meds,
       });
     } catch (err) {
       console.log(err);

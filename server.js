@@ -13,7 +13,7 @@ const postRoutes = require("./routes/posts");
 const commentRoutes = require("./routes/comments");
 const smsRoutes = require("./routes/sms");
 const callRoutes = require("./routes/call");
-
+const medRoutes = require("./routes/meds");
 
 
 
@@ -65,6 +65,8 @@ app.use("/post", postRoutes);
 app.use("/comment", commentRoutes);
 app.use("/sms", smsRoutes);
 app.use("/call", callRoutes);
+app.use("/med", medRoutes);
+app.use("/bad", mainRoutes);
 
 
 

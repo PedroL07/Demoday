@@ -34,7 +34,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Hola, <%= user.userName %></div>
+        <div class="sidebar-brand-text mx-3">Patients</div>
       </a>
 
       <!-- Divider -->
@@ -60,19 +60,19 @@
         <a class="nav-link" href="/feed">    
           <span>All patients</span>
         </a>
-        <a class="nav-link" href="/bad">    
+        <a class="nav-link" href="/profile">    
           <span>Staff</span>
         </a>
-        <a class="nav-link" href="/bad">    
+        <a class="nav-link" href="/profile">    
           <span>Employee portal</span>
         </a>
-        <a class="nav-link" href="/bad">    
+        <a class="nav-link" href="/profile">    
           <span>HR Recourse</span>
         </a>
-        <a class="nav-link" href="/bad">    
+        <a class="nav-link" href="/profile">    
           <span>Pay Roll</span>
         </a>
-        <a class="nav-link" href="/bad">    
+        <a class="nav-link" href="/profile">    
           <span>Invoice</span>
         </a>
 
@@ -111,48 +111,20 @@
     </ul>
 
   <!-- main content where the form and profiel img are -->
-  <div class="container text-center">
 
-    <div class="card shadow mb-4">
-      <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">All Patients - Sorted</h6>
-      </div>
-      <div class="card-body">
-          <div class="table-responsive">
-            <% for(var i=0; i<posts.length; i++) {%>
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
 
-                  <thead>
-                    
-                      <tr>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>DOB</th>
-                          <th>Cell</th>
-                          <th>Perfers</th>
-                          <th>Next check up</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                        
-                          <td><a class="nav-link" href="/post/<%= posts[i]._id%>">
-          
-                            <span><%= posts[i].title%></span>
-                          </a></td>
-                          <td><%= posts[i].lastN%></td>
-                          <td><%= posts[i].dob%></td>
-                          <td><%= posts[i].cell%></td>
-                          <td><%= posts[i].call%></td>
-                          <td><%= posts[i].time%></td>
-                      </tr>
-                      
-                  </tbody>
-              </table>
-              <% } %>
-          </div>
-      </div>
-  </div>
+
+  <div class="container-fluid">
+
+    <!-- 404 Error Text -->
+    <div class="text-center">
+        <div class="error mx-auto" data-text="404">404</div>
+        <p class="lead text-gray-800 mb-5">Page Not Found</p>
+        <p class="text-gray-500 mb-0">It looks like you found a glitch in the matrix...</p>
+        <a href="/profile">&larr; Back to Profile</a>
+    </div>
+
+</div>
 
 
 
