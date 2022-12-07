@@ -1,5 +1,5 @@
 const accountSid = "AC62ded13896f2e96cecbf16077af109ea";
-const authToken = "5400434e4fe87653311d70e660333607";
+const authToken = "abfa53db02dc4b43096e79414f2f290c";
 const client = require("twilio")(accountSid, authToken);
 require("dotenv").config({ path: "./config/.env" });
 
@@ -9,7 +9,7 @@ module.exports = {
   createText: async (req, res) => {
     client.messages 
       .create({         
-            body: `'${message}'`, from: '+13466332747', to: '+16174078920' 
+            body: `'${message}'`, from: '+13466332747', to: '+17816914251' 
        }) 
       .then(message => console.log(message.sid)) 
       .done();

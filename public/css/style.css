@@ -11,10 +11,10 @@ p{
     background: #4ac6e2;
     
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, #4ac6e2, #ef4162, #ef4162, #4ac6e2);
+    background: -webkit-linear-gradient(to right, #4ac6e2, #4e73df, #438ea4, #4ac6e2);
     
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, #4ac6e2, #ef4162, #ef4162, #4ac6e2);
+    background: linear-gradient(to right, #4ac6e2, #4e73df, #438ea4, #4ac6e2);
     }
     
     @media (min-width: 768px) {
@@ -30,7 +30,7 @@ p{
     }
   
 
- #firstt, #first{
+ #firstt, #first, #submitter{
     background-color: #4ac6e2;
  }
  .klk{

@@ -31,7 +31,8 @@
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/profile">
         <div class="sidebar-brand-icon rotate-n-15">
         </div>
-        <div class="sidebar-brand-text mx-3">你好, <%= user.userName %></div>
+        <div class="sidebar-brand-text mx-3">Hello, <%= user.userName %>
+        </div>
       </a>
 
       <!-- Divider -->
@@ -54,22 +55,22 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="/feed">    
+        <a class="nav-link" href="/feed">
           <span>All patients</span>
         </a>
-        <a class="nav-link" href="/bad">    
+        <a class="nav-link" href="/bad">
           <span>Staff</span>
         </a>
-        <a class="nav-link" href="/bad">    
+        <a class="nav-link" href="/bad">
           <span>Employee portal</span>
         </a>
-        <a class="nav-link" href="/bad">    
+        <a class="nav-link" href="/bad">
           <span>HR Recourse</span>
         </a>
-        <a class="nav-link" href="/bad">    
+        <a class="nav-link" href="/bad">
           <span>Pay Roll</span>
         </a>
-        <a class="nav-link" href="/bad">    
+        <a class="nav-link" href="/bad">
           <span>Invoice</span>
         </a>
 
@@ -78,18 +79,18 @@
       <!-- Nav Item - Utilities Collapse Menu -->
 
 
-        <!-- Divider -->
-        <hr class="sidebar-divider">
+      <!-- Divider -->
+      <hr class="sidebar-divider">
 
-        <!-- Heading -->
-        <div class="sidebar-heading">
-          Done for today ?
-        </div>
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Done for today ?
+      </div>
 
-        <!-- Nav Item - Pages Collapse Menu -->
+      <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item active">
         <a class="nav-link" href="/logout">
-          
+
           <span>Log out</span>
         </a>
 
@@ -119,54 +120,69 @@
     <div class="container-fluid">
 
       <!-- Page Heading -->
-      <h1 class="h3 mb-4 text-gray-800"><form class="" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
-        <button type="submit" class="btn btn-primary">Check in YTD</button></h1>
+      <div>
+        <h1 class="h3 mb-4 text-gray-800">
+          <form class="" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
+            <button type="submit" class="btn btn-primary">Check in YTD</button>
+        </h1>
+      </div>
+
+
       <div class="row">
         <div class="col-sm-3">
-         
-  <div class="card" style="width: 100%;">
-    <img class="img-fluid card-img-top" src="<%= post.image%>" />
-    <div class="card-body">
-        <h5 class="card-title"> <%= post.title %>, <%= post.lastN%></h5>
-      <p class="card-text">Assigned to: <%= user.userName %></p>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Check in YTD: <%= post.likes %></li>
-      <li class="list-group-item">DOB: <%= post.dob%></li>
-      <li class="list-group-item">Address: 9 Lander Ave, Lynn Ma</li>
-      <li class="list-group-item">Occupation: Software Engineer</li>
-      <li class="list-group-item">Last Visit: <%= post.time %></li>
-      <li class="list-group-item">Next Visit: <%= post.date %></li>
-      <li class="list-group-item">Perfers a : <%= post.call %> to <%= post.cell %> </li>
-      <li class="list-group-item">Notes : <%= post.caption %></li>
-    </ul>
-    <div class="card-body">
-      <!-- <form class="" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
-        <button type="submit" class="btn btn-primary">Check in</button><p><%= post.likes %></p>
-      </form> -->
-      
-      
-      <%if(post.user==user.id){ %>
-        <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-5">
-          <button class="btn btn-primary" type="submit">Delete Profile</button>
-        </form>
-        <%}%>
-    </div>
-  </div>
+
+          <div class="card" style="width: 100%;">
+            <img class="img-fluid card-img-top" src="<%= post.image%>" />
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= post.title %>, <%= post.lastN%>
+              </h5>
+              <p class="card-text">Assigned to: <%= user.userName %>
+              </p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Check in YTD: <%= post.likes %>
+              </li>
+              <li class="list-group-item">DOB: <%= post.dob%>
+              </li>
+              <li class="list-group-item">Address: 9 Lander Ave, Lynn Ma</li>
+              <li class="list-group-item">Occupation: Software Engineer</li>
+              <li class="list-group-item">Last Visit: <%= post.time %>
+              </li>
+              <li class="list-group-item">Next Visit: <%= post.date %>
+              </li>
+              <li class="list-group-item">Perfers a : <%= post.call %> to <%= post.cell %>
+              </li>
+              <li class="list-group-item">Notes : <%= post.caption %>
+              </li>
+            </ul>
+            <!-- <div class="card-body">
 
 
-  </form>
+            </div> -->
+          </div>
+          <div>
+            <%if(post.user==user.id){ %>
+              <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-5">
+                <button class="btn btn-primary" type="submit">Delete Profile</button>
+              </form>
+              <%}%>
+          </div>
+
+
 
         </div>
-    
-        <div class="col-sm-4">
 
-          
-          <h3>Add private notes</h3>
-          
+        <div class="col-sm-4">
+          <h3></h3>
+
+
+
+          <h3>Additional notes</h3>
+
           <div class="card shadow mb-4">
             <div class="card-header">
-                No one but you can view :)
+              Patients progress
             </div>
             <div class="card-body">
               <form action="/comment/createComment/<%=post._id %>?_method=POST" method="POST">
@@ -174,14 +190,14 @@
                 <button type="submit" class="btn btn-primary">Add Comment</button>
               </form>
             </div>
-        </div>
+          </div>
 
-        <!-- Basic Card Example -->
-        <h3>Add new medication</h3>
-        <div class="card shadow mb-4">
-          
+          <!-- Basic Card Example -->
+          <h3>Add new medication</h3>
+          <div class="card shadow mb-4">
+
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Medication form</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Medication form</h6>
             </div>
             <div class="card-body">
               <form action="/med/createMed/<%=post._id %>?_method=POST" method="POST">
@@ -192,18 +208,18 @@
                   <% for(var i=0; i<meds.length; i++) {%>
                     <li class=''>
                       Med: <%= meds[i].med%> - <%= meds[i].when%> <br>
-                        <form action="/sms/createText" method="POST" enctype="multipart/form-data" method="POST">
-                          <button type="button" class="btn btn-primary btn-sm">Sms</button>             
-                        <form action="/call/createCall" method="POST" enctype="multipart/form-data" method="POST">
-                          <button type="button" class="btn btn-primary btn-sm">Call</button>  
-                        </form>
-                      </form>
+                          <form action="/sms/createText" method="POST" enctype="multipart/form-data" method="POST">
+                            <button type="button" class="btn btn-primary btn-sm">Sms</button>
+                            <form action="/call/createCall" method="POST" enctype="multipart/form-data" method="POST">
+                              <button type="button" class="btn btn-primary btn-sm">Call</button>
+                            </form>
+                          </form>
                     </li>
                     <% } %>
                 </ul>
 
             </div>
-        </div>
+          </div>
         </div>
         <!-- <div class="col-sm-1">
           <p>
@@ -218,34 +234,36 @@
           </ul>
         </div> -->
         <div class="col-sm-5">
-          
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="font-weight-bold text-primary text-uppercase mb-1">
-                                Private notes</div>
-                            <div class="h5 mb-0 text-gray-800">          <ul>
-                              <% for(var i=0; i<comments.length; i++) {%>
-                                <li class=''>
-                                  <%= comments[i].comment%> - <%= comments[i].createdAt%>
-                                </li>
-                                <% } %>
-                            </ul></div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-comments fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
+
+          <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="font-weight-bold text-primary text-uppercase mb-1">
+                    Private notes</div>
+                  <div class="h5 mb-0 text-gray-800">
+                    <ul>
+                      <% for(var i=0; i<comments.length; i++) {%>
+                        <li class=''>
+                          <%= comments[i].comment%> - <%= comments[i].createdAt%>
+                        </li>
+                        <% } %>
+                    </ul>
+                  </div>
                 </div>
+                <div class="col-auto">
+                  <i class="fas fa-comments fa-2x text-gray-300"></i>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
+
     </div>
 
-        </div>
-
-    </div>
-    <!-- /.container-fluid -->
+  </div>
+  <!-- /.container-fluid -->
 
 
   </div>
@@ -254,7 +272,7 @@
 
 
   </div>
- 
+
 
   </div>
 
