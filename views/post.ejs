@@ -195,7 +195,14 @@
           <!-- Basic Card Example -->
           <h3>Add new medication</h3>
           <div class="card shadow mb-4">
-
+          
+              <form action="/sms/createText" method="POST" enctype="multipart/form-data" method="POST">
+                <button>Send Sms</button>
+              </form>
+              
+              <form action="/call/createCall" method="POST" enctype="multipart/form-data" method="POST">
+                <button>Call</button>
+              </form>
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Medication form</h6>
             </div>
@@ -203,25 +210,24 @@
               <form action="/med/createMed/<%=post._id %>?_method=POST" method="POST">
                 <input type="text" placeholder="ex. Advil" class="form-control" id="med" name="med">
                 <input type="text" placeholder="Frequency" class="form-control" id="when" name="when">
-                <button type="submit" class="btn btn-primary">Add Medication</button><br>
-                <ul>
-                  <% for(var i=0; i<meds.length; i++) {%>
-                    <li class=''>
-                      Med: <%= meds[i].med%> - <%= meds[i].when%> <br>
-                          <form action="/sms/createText" method="POST" enctype="multipart/form-data" method="POST">
-                            <button type="button" class="btn btn-primary btn-sm">Sms</button>
-                            <form action="/call/createCall" method="POST" enctype="multipart/form-data" method="POST">
-                              <button type="button" class="btn btn-primary btn-sm">Call</button>
-                            </form>
-                          </form>
-                    </li>
-                    <% } %>
-                </ul>
+                <button type="submit" class="btn btn-primary">Add Medication</button>
+              </form><br>
 
-            </div>
+              <ul>
+                <% for(var i=0; i<meds.length; i++) {%>
+                  <li class=''>
+
+                    Med: <%= meds[i].med%> - <%= meds[i].when%> <br>
+
+                  </li>
+                  <% } %>
+              </ul>
+            
           </div>
         </div>
-        <!-- <div class="col-sm-1">
+      </div>
+      
+      <!-- <div class="col-sm-1">
           <p>
             PRIVATE NOTES to be read my peter parker
           </p>
@@ -233,34 +239,34 @@
               <% } %>
           </ul>
         </div> -->
-        <div class="col-sm-5">
+      <div class="col-sm-5">
 
-          <div class="card border-left-primary shadow h-100 py-2">
-            <div class="card-body">
-              <div class="row no-gutters align-items-center">
-                <div class="col mr-2">
-                  <div class="font-weight-bold text-primary text-uppercase mb-1">
-                    Private notes</div>
-                  <div class="h5 mb-0 text-gray-800">
-                    <ul>
-                      <% for(var i=0; i<comments.length; i++) {%>
-                        <li class=''>
-                          <%= comments[i].comment%> - <%= comments[i].createdAt%>
-                        </li>
-                        <% } %>
-                    </ul>
-                  </div>
+        <div class="card border-left-primary shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="font-weight-bold text-primary text-uppercase mb-1">
+                  Private notes</div>
+                <div class="h5 mb-0 text-gray-800">
+                  <ul>
+                    <% for(var i=0; i<comments.length; i++) {%>
+                      <li class=''>
+                        <%= comments[i].comment%> - <%= comments[i].createdAt%>
+                      </li>
+                      <% } %>
+                  </ul>
                 </div>
-                <div class="col-auto">
-                  <i class="fas fa-comments fa-2x text-gray-300"></i>
-                </div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-comments fa-2x text-gray-300"></i>
               </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
+
+  </div>
 
   </div>
   <!-- /.container-fluid -->
